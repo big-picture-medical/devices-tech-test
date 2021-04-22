@@ -24,15 +24,15 @@ How you install this exactly on your host is up to you, but we recommend:
 ## The Tasks
 Before getting started, should you have any questions regarding any of the tasks please email stuart@bigpicturemedical.com.
 
-###1. Save the DICOM File
+### 1. Save the DICOM File
 Save the DICOM file locally to a cache directory with a temporary file with a randomly generated name.
 * The folder should be configurable via a file that stores properties
 * There should be no risk of files for different scans having conflicting names
 
-###2. Extract metadata and store
+### 2. Extract metadata and store
 From the DICOM file, extract metadata including patient ID, SOP Instance UID along with the saved filename and timestamp. This can be stored in a persistence store of your choosing eg. CSV file, SQLLite etc.
 
-###3. Upload the DICOM to a DICOMWeb URL
+### 3. Upload the DICOM to a DICOMWeb URL
 Send the DICOM to a configurable DICOM Web URL. This should follow the standard defined at https://www.dicomstandard.org/dicomweb/store-stow-rs/.
 * Note that this may take some time and should be run in a separate thread to the 
 * The store should also recorded which DICOM files have been sent, failed etc.
