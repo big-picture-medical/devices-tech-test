@@ -22,5 +22,27 @@ How you install this exactly on your host is up to you, but we recommend:
 `
 
 ## The Tasks
+Before getting started, should you have any questions regarding any of the tasks please email stuart@bigpicturemedical.com.
 
-TBC
+###1. Save the DICOM File
+Save the DICOM file locally to a cache directory with a temporary file with a randomly generated name.
+* The folder should be configurable via a file that stores properties
+* There should be no risk of files for different scans having conflicting names
+
+###2. Extract metadata and store
+From the DICOM file, extract metadata including patient ID, SOP Instance UID along with the saved filename and timestamp. This can be stored in a persistence store of your choosing eg. CSV file, SQLLite etc.
+
+###3. Upload the DICOM to a DICOMWeb URL
+Send the DICOM to a configurable DICOM Web URL. This should follow the standard defined at https://www.dicomstandard.org/dicomweb/store-stow-rs/.
+* Note that this may take some time and should be run in a separate thread to the 
+* The store should also recorded which DICOM files have been sent, failed etc.
+* The temporary DICOM file stored must be deleted once it has been sent.
+
+## What we're looking for
+* Maintainable code split into files logically
+* Correct usage of appropriate Python libraries
+* Tests as documentation
+* Git hygiene
+
+## Submission
+Once complete, please create a zip file or tarball of your repository with the git history intact. Then please send your solution to stuart@bigpicturemedical.com
