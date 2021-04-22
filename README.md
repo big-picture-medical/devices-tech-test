@@ -46,3 +46,4 @@ Send the DICOM to a configurable DICOM Web URL. This should follow the standard 
 
 ## Submission
 Once complete, please create a zip file or tarball of your repository with the git history intact. Then please send your solution to stuart@bigpicturemedical.com
+
