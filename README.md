@@ -30,16 +30,17 @@ Save the DICOM file locally to a cache directory with a temporary file with a ra
 * There should be no risk of files for different scans having conflicting names
 
 ###2. Extract metadata and store
-From the DICOM file, extract metadata including patient ID, SOP Instance UID along with the saved filename and timestamp. This can be stored in a persistence store of your choosing eg. CSV file, SQLLite etc.
+From the DICOM file, extract metadata including patient ID, SOP Instance UID along with the saved filename and timestamp. This can be stored in a persistence store of your choosing eg. CSV file, SQLLite etc. The timestamp should be stored in Coordinated Universal Time (UTC) format.
 
 ###3. Upload the DICOM to a DICOMWeb URL
 Send the DICOM to a configurable DICOM Web URL. This should follow the standard defined at https://www.dicomstandard.org/dicomweb/store-stow-rs/.
-* Note that this may take some time and should be run in a separate thread to the 
-* The store should also recorded which DICOM files have been sent, failed etc.
+* Note that this may take some time and should be run in a separate thread.
+* The persistence store should also record which DICOM files have been sent, failed etc.
 * The temporary DICOM file stored must be deleted once it has been sent.
 
 ## What we're looking for
-* Maintainable code split into files logically
+* Maintainable code split logically into files, classes and methods
+* Use of applicable design patterns
 * Correct usage of appropriate Python libraries
 * Tests as documentation
 * Git hygiene
