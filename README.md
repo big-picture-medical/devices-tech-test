@@ -4,7 +4,7 @@ Python technical test for device integration hires
 ## Overview
 This repository is the starting point for Big Picture's Device Tech Test.
 
-We have created a basic DICOM SCP that we would like you to extend to store the data and forward to a DICOMWeb endpoint.
+We have created a basic DICOM SCP that we would like you to extend to anonymise the data and forward to a DICOMWeb endpoint.
 
 ## Setup
 
