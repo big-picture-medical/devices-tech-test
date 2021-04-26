@@ -24,6 +24,8 @@ How you install this exactly on your host is up to you, but we recommend:
 ## The Tasks
 Before getting started, should you have any questions regarding any of the tasks please email stuart@bigpicturemedical.com.
 
+The existing codebase has a very simple PACS-like endpoint for DICOM data from an SCU. These tasks will require you to store the incoming DICOM data and then forward it to a more modern DICOMWeb server.
+
 ### 1. Save the DICOM File
 Save the DICOM file locally to a cache directory with a temporary file with a randomly generated name.
 * The folder should be configurable via a file that stores properties
@@ -33,7 +35,10 @@ Save the DICOM file locally to a cache directory with a temporary file with a ra
 From the DICOM file, extract metadata including patient ID, SOP Instance UID along with the saved filename and timestamp. This can be stored in a persistence store of your choosing eg. CSV file, SQLLite etc.
 
 ### 3. Upload the DICOM to a DICOMWeb URL
-Send the DICOM to a configurable DICOM Web URL. This should follow the standard defined at https://www.dicomstandard.org/dicomweb/store-stow-rs/.
+Send the DICOM to a configurable DICOM Web URL. This should follow the STOW-RS standard defined at https://www.dicomstandard.org/dicomweb/store-stow-rs/.
+
+We have setup an endpoint for you to upload to at https://dicomweb.shared.bigpicturemedical.com/studies, which follows the STOW-RS standard.
+
 * Note that this may take some time and should be run in a separate thread to the 
 * The store should also recorded which DICOM files have been sent, failed etc.
 * The temporary DICOM file stored must be deleted once it has been sent.
