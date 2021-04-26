@@ -32,7 +32,7 @@ Save the DICOM file locally to a cache directory with a temporary file with a ra
 * There should be no risk of files for different scans having conflicting names
 
 ### 2. Extract metadata and store
-From the DICOM file, extract metadata including patient ID, SOP Instance UID along with the saved filename and timestamp. This can be stored in a persistence store of your choosing eg. CSV file, SQLLite etc. The timestamp should be stored in Coordinated Universal Time (UTC) format.
+From the DICOM file, extract metadata including patient ID, Study Instance UID and SOP Instance UID along with the saved filename and timestamp. This can be stored in a persistence store of your choosing eg. CSV file, SQLLite etc. The timestamp should be stored in Coordinated Universal Time (UTC) format.
 
 ### 3. Upload the DICOM to a DICOMWeb URL
 Send the DICOM to a configurable DICOM Web URL. This should follow the STOW-RS standard defined at https://www.dicomstandard.org/dicomweb/store-stow-rs/.
